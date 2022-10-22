@@ -5,10 +5,10 @@
 
 void addEff(int val1[], int val2[], int val3[], int pos1[], int pos2[], int pos3[], int k1, int k2){
 
-	 int numNonZero = k2 + k1; // number of non zeros NOT ACCOUNING FOR WHEN ADD TO 0
+	 int NonZero = k2 + k1; //non zero elements
 	 int count = 0;
 
-	    for (int i = 0; i < numNonZero; i++)
+	    for (int i = 0; i < NonZero; i++)
 	    {
 	        pos3[i] = 0;
 	        val3[i] = 0;
@@ -38,12 +38,12 @@ void addEff(int val1[], int val2[], int val3[], int pos1[], int pos2[], int pos3
 
 	    int maxDupe = count; // get the maximum duplications
 
-	      for (int i = 0; i  < k1; i++)// vector 1
+	      for (int i = 0; i  < k1; i++)
 	      {
 	           int isUnique = 1;
 	           for (int j = 0; j < maxDupe; j++)
 	           {
-	               if (pos1[i] == pos3[j])// checks if duplicate number
+	               if (pos1[i] == pos3[j])
 	               {
 	                  isUnique = 0;
 	                  break;
@@ -51,18 +51,18 @@ void addEff(int val1[], int val2[], int val3[], int pos1[], int pos2[], int pos3
 	            }
 	               if (pos3[count] == 0 && isUnique == 1)
 	               {
-	                   pos3[count] += pos1[i]; // sets the value of the sum position at the initial position to the value
+	                   pos3[count] += pos1[i];
 	                   val3[count] += val1[i];
 	                   count++;
 	               }
 	        }
 
-	        for (int i = 0; i  < k2; i++)// vector 1
+	        for (int i = 0; i  < k2; i++)
 	        {
 	            int isUnique = 1;
 	            for (int j = 0; j < maxDupe; j++)
 	            {
-	                if (pos2[i] == pos3[j]) // checks if duplicate number
+	                if (pos2[i] == pos3[j])
 	                {
 	                   isUnique = 0;
 	                   break;
@@ -70,7 +70,7 @@ void addEff(int val1[], int val2[], int val3[], int pos1[], int pos2[], int pos3
 	             }
 	             if (pos3[count] == 0 && isUnique == 1)
 	             {
-	                pos3[count] += pos2[i]; // sets the value of the sum position at the initial position to the value
+	                pos3[count] += pos2[i];
 	                val3[count] += val2[i];
 	                count++;
 	              }
